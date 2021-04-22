@@ -20,9 +20,6 @@ jobs:
        
     - name: Build with Maven
       run: mvn clean install
-    - name: Scan with Contrast
-      run: java -javaagent:D:\ContrastSecurity\contrast.jar -jar C:\actions_runner\actions-runner-win-x64-2.277.1\Workspace\Github-actions-demo\Github-actions-demo\target\SubmissionDataForm-0.0.1-SNAPSHOT.jar
-      
    
       
 
