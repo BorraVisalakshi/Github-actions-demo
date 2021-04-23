@@ -17,7 +17,8 @@ jobs:
          
     - name: Build with Maven
       run: mvn clean install
-    #Tomcat deployment  
+      
+    #Tomcat deployment in Local
     - name: Deploy to maven
       run: mvn tomcat7:deploy
    
