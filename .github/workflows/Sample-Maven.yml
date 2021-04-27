@@ -11,8 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout the code
+      uses: actions/checkout@v1
+      #Zip the folder
     - name: Zip Folder
       run: zip -r release.zip .
+      #Check the path
     - name: Release to Github
       run: echo "Release"
+      
+    - name: Check path
+      run: ls -a
