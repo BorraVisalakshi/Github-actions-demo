@@ -5,26 +5,14 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    branches:
+      - master
 jobs:
   build:
-
-    runs-on: windows-latest
-
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout the code
-      uses: actions/checkout@v2
-      
+    - uses: actions/checkout@v1
     - name: Zip Folder
       run: zip -r release.zip .
-      
-    - name: check folder
-      run: ls -a
-    
     - name: Release to Github
       run: echo "Release"
-        
-    
