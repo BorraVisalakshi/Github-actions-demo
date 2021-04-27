@@ -18,8 +18,11 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     #Zipping the Folder
-    - name: Zip the folder
-      run: zip -r release.zip
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'release.zip'
+        
     #release to github
     - name: Release to Git
       run: echo "Release"
