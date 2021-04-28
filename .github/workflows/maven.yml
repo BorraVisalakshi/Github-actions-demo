@@ -19,9 +19,6 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
       
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      
     - name: Zip the folder
       run: zip -r MainFolder.zip .
       
