@@ -1,2 +1,2 @@
 # Github-actions-demo
-A Demo examples of Github actions
+Zipping and moving the code to New Directory
