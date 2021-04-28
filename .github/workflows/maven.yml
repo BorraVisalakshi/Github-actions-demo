@@ -25,5 +25,5 @@ jobs:
           dest: result.zip
           
     - name: Check the folder
-      run: ls -a
+      run: dir
       
