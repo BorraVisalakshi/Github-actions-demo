@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Zipping and Moving the Folder
 
 on:
   push:
@@ -14,19 +14,25 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v2
+    #Checkout the Code
+    - name: Step-1 Checkout the code
+      uses: actions/checkout@v2
       
-    - name: Build with Maven
+   #Build  Maven project 
+    - name: Step-2 Build with Maven goals
       run: mvn clean install
       
-    - name: Zip
+  #zip the file  
+    - name: Step-3 Zip the Code
       uses: papeloto/action-zip@v1
       with:
           dest: result.zip
           
+ #Velify the all the folders in Main Directory     
     - name: Check the folder
       run: dir
-      
+    
+ # Move the Fodler from One directory to another   
     - name: Move folder
       run: move result.zip D:\Actions
       
