@@ -21,13 +21,6 @@ jobs:
    #Build  Maven project 
     - name: Step-2 Build with Maven goals
       run: mvn clean install
-      
-   #Download artifact
-    - name: Step-3 Download Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: my-artifact
-        path: D:/Actions
         
   #zip the file  
     - name: Step-3 Zip the Code
@@ -42,4 +35,10 @@ jobs:
  # Move the Fodler from One directory to another   
     - name: Move folder
       run: move result.zip D:\Actions
+#Download artifact
+    - name: Step-3 Download Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: my-artifact
+        path: D:/Actions
       
