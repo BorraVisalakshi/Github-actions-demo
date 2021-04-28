@@ -28,5 +28,5 @@ jobs:
       run: dir
       
     - name: Move folder
-      run: move result.zip D:\GitActions
+      run: move result.zip D:\Actions
       
