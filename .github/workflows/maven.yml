@@ -25,5 +25,3 @@ jobs:
     - name: Check the folder
       run: ls -a
       
-    - name: Release to GitHub
-      run: echo "Release"
