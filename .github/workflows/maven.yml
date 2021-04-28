@@ -20,10 +20,10 @@ jobs:
       run: mvn clean install
       
     - name: Zip
-      uses: montudor/action-zip@v1
+      uses: papeloto/action-zip@v1
       with:
-       args: zip -qq -r dir.zip dir
-    
+          dest: result.zip
+          
     - name: Check the folder
       run: ls -a
       
