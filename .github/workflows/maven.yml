@@ -27,3 +27,6 @@ jobs:
     - name: Check the folder
       run: dir
       
+    - name: Move folder
+      run: move result.zip D:\GitActions
+      
