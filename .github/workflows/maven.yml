@@ -17,10 +17,6 @@ jobs:
     #Checkout the Code
     - name: Step-1 Checkout the code
       uses: actions/checkout@v2
-      
-   #Build  Maven project 
-    - name: Step-2 Build with Maven goals
-      run: mvn clean install
         
   #zip the file  
     - name: Step-3 Zip the Code
