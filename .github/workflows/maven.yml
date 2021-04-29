@@ -34,5 +34,5 @@ jobs:
     
  # Move the Fodler from One directory to another   
     - name: Move folder
-      run: move result.zip D:\Actions
+      run: move result.zip X:\Temp_AEPCommon\Vishali
 
