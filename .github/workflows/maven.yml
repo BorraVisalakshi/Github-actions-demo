@@ -29,22 +29,17 @@ jobs:
           
  #Velify the all the folders in Main Directory     
     - name: Operations
-      uses: cross-the-world/scp-pipeline@master
-      env:
-          HELLO: Hi
-          MESSAGE: Welcome
+      uses: a-was/scp-action@v1
       with:
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           host: 18.217.88.106
           port: 22
           user: ec2-user
-          local: home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war
-          remote: /home/github/test/
+          source: home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war
+          detination: /home/github/test/
           
-            
-        # then uploads these 2 files
-          scp: |
-           home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war  => "/home/ec2-user/"
     - name: Check path
-      run: ls -a;
+      run: 
+        cd ec2-user;
+        ls -a
 
