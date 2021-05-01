@@ -38,7 +38,7 @@ jobs:
           host: 18.217.88.106
           port: 22
           user: ec2-user
-          local: D:/main.war
+          local: home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war
           remote: /home/github/test/
           
             
