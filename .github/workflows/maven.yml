@@ -44,5 +44,7 @@ jobs:
             
         # then uploads these 2 files
           scp: |
-           home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war  => "/home/ec2-user/git/"
+           home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war  => "/home/ec2-user/"
+    - name: Check path
+      run: ls -a;
 
