@@ -17,6 +17,9 @@ jobs:
     #Checkout the Code
     - name: Step-1 Checkout the code
       uses: actions/checkout@v2
+      
+    - name: Build maven
+      run: mvn clean install
         
   #zip the file  
     - name: Step-3 Zip the Code
@@ -25,15 +28,21 @@ jobs:
           dest: result.zip
           
  #Velify the all the folders in Main Directory     
-    - name: Check the folder
-      run: dir
-    - name: Copy single file to remote
-      uses: garygrossgarten/github-action-scp@release
+    - name: Operations
+      uses: cross-the-world/scp-pipeline@master
+      env:
+          HELLO: Hi
+          MESSAGE: Welcome
       with:
-          local: /home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war
-          remote: scp/single/SubmissionDataForm-0.0.1-SNAPSHOT.war
-          host: 3.143.68.173
-          username: ec2-user
-          password: aws123
-          privateKey: ${{ secrets.SSH_KEY}}
+          key: ${{ secrets.SSH_KEY }}
+          host: 18.217.88.106
+          port: 22
+          user: ec2-user
+          local: D:/main.war
+          remote: /home/github/test/
+          
+            
+        # then uploads these 2 files
+          scp: |
+           home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war  => "/home/ec2-user/git/"
 
