@@ -34,7 +34,20 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           host: 18.217.88.106
           port: 22
-          user: ec2-user       
+          user: ec2-user 
+          ssh_before: |
+            ls -lath
+
+    # then uploads these 2 files
+          scp: |
+            sample1.txt ec2@18.217.88.106:~/sample1.dat
+            
+
+    # then run these commands
+          ssh_after: |
+           echo HELLO
+           echo MESSAGE
+           ls -lath
     - name: Check path
       run: 
         cd .. ;
