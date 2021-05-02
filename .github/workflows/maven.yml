@@ -36,6 +36,7 @@ jobs:
           port: 22
           user: ec2-user 
           ssh_before: |
+            ls -lath;
             ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@ec2-18-217-88-106.us-east-2.compute.amazonaws.com;
             sudo su;
     # then uploads these 2 files
