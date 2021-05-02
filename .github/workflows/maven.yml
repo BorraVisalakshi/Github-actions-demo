@@ -29,15 +29,12 @@ jobs:
           
  #Velify the all the folders in Main Directory     
     - name: Operations
-      uses: a-was/scp-action@v1
+      uses: alinz/ssh-scp-action@master
       with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           host: 18.217.88.106
           port: 22
-          user: ec2-user
-          source: home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war
-          detination: /home/github/test/
-          
+          user: ec2-user       
     - name: Check path
       run: 
         cd ec2-user;
