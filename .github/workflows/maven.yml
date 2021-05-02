@@ -37,6 +37,7 @@ jobs:
           user: ec2-user       
     - name: Check path
       run: 
-        cd ec2-user;
+        cd .. ;
+        cd .. ;
         ls -a
 
