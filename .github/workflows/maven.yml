@@ -35,7 +35,7 @@ jobs:
           host: 18.217.88.106
           port: 22
           user: ec2-user 
-          command: scp -i ${{ secrets.SSH_PRIVATE_KEY }} /home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war ec2-user@18-217-88-106:/home/ec2-user/
+          command: ls -a
       
     - name: Check path
       run: 
