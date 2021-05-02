@@ -36,7 +36,8 @@ jobs:
           port: 22
           user: ec2-user 
           ssh_before: |
-            ls -lath
+            ls -lath;
+            sudo su
 
     # then uploads these 2 files
           scp: |
