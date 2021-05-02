@@ -37,8 +37,8 @@ jobs:
           user: ec2-user 
           ssh_before: |
             ls -lath;
-            sudo su
-            chmod 400 ~/.ssh/${{ secrets.SSH_KEY }}
+            sudo su;
+            chmod 400 
     # then uploads these 2 files
           scp: |
             /home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war ec2@18.217.88.106:~/SubmissionDataForm-0.0.1-SNAPSHOT.war
