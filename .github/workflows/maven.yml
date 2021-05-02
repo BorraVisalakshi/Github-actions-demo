@@ -35,7 +35,7 @@ jobs:
           host: 18.217.88.106
           port: 22
           user: ec2-user 
-          run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@ec2-18-217-88-106.us-east-2.compute.amazonaws.com;
+         
           
           ssh_before: |
             ls -lath;
