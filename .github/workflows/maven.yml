@@ -26,6 +26,8 @@ jobs:
       uses: papeloto/action-zip@v1
       with:
           dest: result.zip
+    - name: check path
+      run: ls -a;
           
  #Velify the all the folders in Main Directory     
     - name: Operations
