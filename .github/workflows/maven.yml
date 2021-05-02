@@ -34,7 +34,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           host: 18.217.88.106
           port: 22
-          user: root 
+          user: ec2-user 
           ssh_before: |
             ls -lath;
             sudo su
