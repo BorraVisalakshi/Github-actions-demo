@@ -38,7 +38,6 @@ jobs:
           ssh_before: |
             ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@ec2-18-217-88-106.us-east-2.compute.amazonaws.com;
             sudo su;
-            chmod 400 
     # then uploads these 2 files
           scp: |
             /home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war ec2@18.217.88.106:~/SubmissionDataForm-0.0.1-SNAPSHOT.war
