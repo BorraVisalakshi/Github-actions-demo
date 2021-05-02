@@ -34,14 +34,14 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           host: 18.217.88.106
           port: 22
-          user: ec2-user 
+          user: root 
           ssh_before: |
             ls -lath;
             sudo su
 
     # then uploads these 2 files
           scp: |
-            sample1.txt ec2@18.217.88.106:~/sample1.dat
+            /home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war ec2@18.217.88.106:~/SubmissionDataForm-0.0.1-SNAPSHOT.war
             
 
     # then run these commands
