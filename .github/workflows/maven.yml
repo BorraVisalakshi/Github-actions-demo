@@ -39,7 +39,7 @@ jobs:
           user: ec2-user 
           command: 
                   ls -a;
-                  mkdir git
+                  mkdir git_actions;
                   scp /home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war ec2@18.217.88.106:/ec2-user/git/SubmissionDataForm-0.0.1-SNAPSHOT.war;
                   
       
