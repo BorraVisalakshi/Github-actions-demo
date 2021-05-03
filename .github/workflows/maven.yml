@@ -48,8 +48,8 @@ jobs:
         username: ec2-user
         password: ${{ secrets.SSH_KEY }}
         port: 22
-        source: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
-        target: "/home/ec2-user/Actions_Git/"
+        local: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
+        remote: "/home/ec2-user/Actions_Git/"
     - name: Check path
       run: 
         cd .. ;
