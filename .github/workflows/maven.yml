@@ -48,7 +48,7 @@ jobs:
       with:
         host: 18.219.65.137
         username: ec2-user
-        password: ${{ secrets.SSH_KEY }}
+        password: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         local: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
         remote: "/home/ec2-user/Actions_Git/"
