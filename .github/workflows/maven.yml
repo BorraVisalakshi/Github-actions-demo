@@ -22,14 +22,6 @@ jobs:
       run: 
             mvn clean;
             mvn install;
-        
-  #zip the file  
-    - name: Step-3 Zip the Code
-      uses: papeloto/action-zip@v1
-      with:
-          dest: result.zip
-    - name: check path
-      run: ls -a;
           
  #Velify the all the folders in Main Directory     
     - name: Operations
@@ -44,14 +36,14 @@ jobs:
                   ls -a;
                 
     - name: copy file via ssh password
-      uses: horochx/deploy-via-scp@master
+      uses: noobly314/deploy-with-scp@v1
       with:
-        host: 18.219.65.137
+        server-ip: 18.219.65.137
         username: ec2-user
-        password: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        local: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
-        remote: "/home/ec2-user/Actions_Git/"
+        src: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
+        dest: "/home/ec2-user/Actions_Git/"
     - name: Check path
       run: 
         cd .. ;
