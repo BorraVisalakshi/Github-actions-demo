@@ -19,7 +19,9 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Build maven
-      run: mvn clean install
+      run: 
+            mvn clean;
+            mvn install;
         
   #zip the file  
     - name: Step-3 Zip the Code
