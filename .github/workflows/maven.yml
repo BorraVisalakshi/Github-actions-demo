@@ -40,7 +40,7 @@ jobs:
           command: 
                   sudo su;
                   ls -a;
-                  mkdir Actions;
+                  mkdir Actions_Git;
                   
                   
     
@@ -52,7 +52,7 @@ jobs:
         password: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         source: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
-        target: "/home/ec2-user/Actions/"
+        target: "/home/ec2-user/Actions_Git/"
     - name: Check path
       run: 
         cd .. ;
