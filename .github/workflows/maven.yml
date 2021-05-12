@@ -4,12 +4,8 @@
 name: Multiple Jobs in a Pipeline
 
 on:
-  workflow_dispatch:
-   inputs:
-      name:
-        description: 'Send for scan'
-        required: true
-        default: ''
+  push:
+   
 jobs:
   Build:
 
