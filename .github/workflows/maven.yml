@@ -9,7 +9,7 @@ on:
       name:
         description: 'Send for scan'
         required: true
-        default: ;
+        default: ''
 jobs:
   Build:
 
@@ -27,7 +27,7 @@ jobs:
      #Zip the code
     - name: Step-4 Zip the Source code
       uses: papeloto/action-zip@v1
-      if: ${{ github.event.inputs.name.default }}
+      if: ${{ true }}
       with:
           dest: SampleWebApp.zip
           
