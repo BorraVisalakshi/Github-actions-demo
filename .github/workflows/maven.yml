@@ -9,7 +9,7 @@ on:
       name:
         description: 'Send for scan'
         required: true
-        default: 'false'
+        default: ''
 jobs:
   Build:
 
