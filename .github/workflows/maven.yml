@@ -4,8 +4,12 @@
 name: Multiple Jobs in a Pipeline
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
+   inputs:
+      name:
+        description: 'Send for scan'
+        required: true
+        default: 'false'
 jobs:
   Build:
 
@@ -23,7 +27,7 @@ jobs:
      #Zip the code
     - name: Step-4 Zip the Source code
       uses: papeloto/action-zip@v1
-      if: ${{ false }}
+      if: ${{ github.event.inputs.name }}
       with:
           dest: SampleWebApp.zip
           
