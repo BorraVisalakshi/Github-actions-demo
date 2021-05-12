@@ -1,15 +1,11 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Zipping and Moving the Folder
-
 on:
-  push:
-    branches: [ main ]
- 
-
+  repository_dispatch:
+    types: [my-event]
 jobs:
-  build:
+  Call_Another_Job:
 
     runs-on: ubuntu-latest
 
@@ -23,30 +19,5 @@ jobs:
             mvn clean;
             mvn install;
           
- #Velify the all the folders in Main Directory     
-    - name: Operations
-      uses: fifsky/ssh-action@master
-      with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          host: 18.219.65.137
-          port: 22
-          user: ec2-user 
-          command: 
-                  sudo su;
-                  ls -a;
-                
-    - name: copy file via ssh password
-      uses: noobly314/deploy-with-scp@v1
-      with:
-        server-ip: 18.219.65.137
-        username: ec2-user
-        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        src: "/home/runner/work/Github-actions-demo/Github-actions-demo/target/SubmissionDataForm-0.0.1-SNAPSHOT.war"
-        dest: "/home/ec2-user/Actions_Git/"
-    - name: Check path
-      run: 
-        cd .. ;
-        cd .. ;
-        ls -a
+ 
 
