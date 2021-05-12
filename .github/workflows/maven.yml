@@ -7,7 +7,7 @@ on:
   push:
     branches: [ main ]
 jobs:
-  Call_Another_Job:
+  Build:
 
     runs-on: ubuntu-latest
 
@@ -26,6 +26,9 @@ jobs:
       if: ${{ true }}
       with:
           dest: SampleWebApp.zip
+          
+    - name: Check path
+      run: ls -a;
           
  
 
