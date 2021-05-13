@@ -25,6 +25,7 @@ jobs:
     - name: Build maven
       run: 
             mvn clean;
+            mvn install;
            
      #Zip the code
     - name: Step-4 Zip the Source code
@@ -34,7 +35,7 @@ jobs:
           dest: SampleWebApp.zip
       
     - name: Check path
-      run: ls -a;
+      run: dir;
           
  
 
