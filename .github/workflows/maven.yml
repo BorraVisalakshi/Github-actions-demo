@@ -15,7 +15,7 @@ on:
 jobs:
   Build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     #Checkout the Code
@@ -29,10 +29,10 @@ jobs:
      #Zip the code
     - name: Step-4 Zip the Source code
       uses: papeloto/action-zip@v1
-      if: ${{ github.event.inputs.name == 'true' }}
+     # if: ${{ github.event.inputs.name == 'true' }}
       with:
           dest: SampleWebApp.zip
-          
+      
     - name: Check path
       run: ls -a;
           
