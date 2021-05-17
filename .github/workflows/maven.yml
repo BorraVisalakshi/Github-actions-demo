@@ -20,7 +20,7 @@ on:
 jobs:
   Build:
 
-    runs-on: self-hosted
+    runs-on: windows-latest
 
     steps:
     #Checkout the Code
