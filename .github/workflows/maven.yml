@@ -4,6 +4,7 @@
 name: Multiple Jobs in a Pipeline
 
 on:
+   push:
    workflow_dispatch:
     inputs:
       scan:
@@ -20,7 +21,7 @@ on:
 jobs:
   Build:
 
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     steps:
     #Checkout the Code
@@ -34,10 +35,14 @@ jobs:
            
      #Zip the code
     - name: Step-4 Zip the Source code
-      uses: papeloto/action-zip@v2
-      if: ${{ github.event.inputs.scan == 'yes' }}
+      uses: thedoctor0/zip-release@master
       with:
-          dest: SampleWebApp.zip
+        type: 'zip'
+        filename: 'WebApp.zip'
+     
+    - name: Move zip file
+      run: move WebApp.zip C:\GitHub_Runner\Saurabh
+     
           
     - name: Step-3 Upload to Artifactory
       if: ${{ github.event.inputs.artifactory == 'yes' }}
