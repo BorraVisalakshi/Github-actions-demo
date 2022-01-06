@@ -34,7 +34,7 @@ jobs:
            
      #Zip the code
     - name: Step-4 Zip the Source code
-      uses: papeloto/action-zip@v1
+      uses: papeloto/action-zip@v2
       if: ${{ github.event.inputs.scan == 'yes' }}
       with:
           dest: SampleWebApp.zip
