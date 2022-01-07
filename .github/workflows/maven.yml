@@ -32,11 +32,10 @@ jobs:
            
      #Zip the code
     - name: Step-4 Zip the Source code
-      uses: thedoctor0/zip-release@master
+      uses: vimtor/action-zip@v1
       with:
-        type: 'zip'
-        filename: 'WebApp.zip'
-     
+       dest: WebApp.zip
+       
     - name: Move zip file
       run: move WebApp.zip C:\GitHub_Runner\Saurabh
      
